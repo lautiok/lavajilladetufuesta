@@ -1,0 +1,680 @@
+/*reset*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #000000;
+    color: #ffffff ;
+}
+
+header {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+header img {
+    width: 250px;
+    height: auto;
+    margin-left: 4rem;
+}
+
+header .button {
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+header .button .svg {
+    width: 2em;
+    height: 2em;
+    fill: #000000;
+}
+
+header nav ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    padding: 1rem;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+header nav ul li span {
+    color: #ff914d;
+}
+
+header .social ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+header .social ul li {
+    padding: 0.4rem;
+}
+
+header .social ul li i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+header .social ul .bi-whatsapp {
+    transition: 0.5s;
+}
+
+header .social ul .bi-whatsapp:hover {
+    color: #00b624;
+}
+
+header .social ul .bi-instagram {
+    transition: 0.5s;
+}
+
+header .social ul .bi-instagram:hover {
+    color: #ff4a4a;
+}
+
+header .social ul .bi-facebook {
+    transition: 0.5s;
+}
+
+header .social ul .bi-facebook:hover {
+    color: #196aff;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.whatsapp-icon i {
+    font-size: 3rem;
+    color: #ff914d;
+}
+
+.whatsapp-icon.show {
+    opacity: 1;
+}
+
+main .hero {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.5018382352941176) 0%,
+            rgba(17, 17, 17, 0.5018382352941176) 50%),
+        url(../Img/g15.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    padding: 10rem;
+    border-radius: 6px;
+}
+
+main .hero .info h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3em;
+}
+
+main .hero .info p {
+    color: #ff914d;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+main .hero a {
+    margin-top: 2rem;
+    background-color: #ff914d;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+main .galery {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+main .contenedor-titulo-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+main .contenedor-titulo-controles h3 {
+    color: #fff;
+    font-size: 30px;
+}
+
+main .contenedor-titulo-controles .indicadores button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+main .contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+    background: #ff914d;
+}
+
+main .peliculas-recomendadas {
+    margin-bottom: 70px;
+}
+
+main .peliculas-recomendadas .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+main .peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: 0.2s ease all;
+}
+
+main .peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+main .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+    left: 0;
+}
+
+main .peliculas-recomendadas .contenedor-principal .flecha-derecha {
+    right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+main .peliculas-recomendadas .contenedor-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+main .peliculas-recomendadas .contenedor-carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main .peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+    min-width: 20%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+main .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+    width: 100%;
+    vertical-align: top;
+}
+
+main .serv {
+    text-align: center;
+    margin-bottom: 10rem;
+}
+main .serv h2 {
+    margin-bottom: 1rem;
+}
+
+main .servicios {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .servicios .servicios-card {
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4009978991596639) 100%);
+    border-radius: 1px;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    margin: 1rem;
+    margin-top: 1.5rem;
+}
+
+main .servicios .servicios-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+main .servicios .servicios-card h3 {
+    color: #000000;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+main .servicios .servicios-card a {
+    background-color: #ff914d;
+    color: #ffffff;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 5px;
+}
+
+main .informacion {
+    text-align: center;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    padding: 4rem;
+    border: 1px solid #c4c4c4;
+}
+
+main .informacion h2 {
+    margin-bottom: 2rem;
+}
+main .dos h2 {
+    color: red;
+}
+
+main .tabla {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    padding: 1rem;
+}
+
+main .tabla .pres-bus {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+.search-button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #ffaa75;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td:first-child {
+    width: 100px;
+}
+
+td:nth-child(2) {
+    width: 300px;
+}
+
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+    width: 150px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 600px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4009978991596639) 100%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+label {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #ff914d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffaa75;
+}
+
+p {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer .footer {
+    background-color: #ff914d;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    margin-top: 6rem;
+}
+
+footer .footer img {
+    width: 300px;
+}
+
+footer .footer .social ul {
+    display: flex;
+}
+
+footer .footer .social ul li {
+    padding: 0.5rem;
+}
+
+footer .footer .social ul li i {
+    font-size: 2rem;
+    color: #000000;
+}
+footer .copy {
+    background-color: #ff914d;
+    text-align: center;
+    padding: 1rem;
+}
+footer .copy p {
+    color: #000000;
+    font-size: 14px;
+}
+footer .copy p a {
+    color: #000000;
+}
+
+@media screen and (max-width: 811px) {
+    header {
+        justify-content: space-around;
+    }
+
+    header img {
+        margin-left: 0;
+    }
+
+    header .button {
+        display: block;
+        margin-right: 20px;
+    }
+
+    header .social {
+        display: none;
+    }
+
+    header .nav {
+        width: 100%;
+        display: none;
+        opacity: 0;
+        height: 0vh;
+        pointer-events: none;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .nav .ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .nav .ul .li {
+        margin: 1em 0;
+    }
+
+    header .nav.activo {
+        display: flex;
+        opacity: 1;
+        height: 30vh;
+        pointer-events: auto;
+    }
+
+    main .hero {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        padding: 5rem;
+    }
+
+    main .galery {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1241px) {
+    main .informacion {
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    main .informacion {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    main .hero {
+        margin-bottom: 2rem;
+    }
+    main .serv {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    th,
+    td {
+        padding: 15px;
+        font-size: 12px;
+    }
+    .pres-bus {
+        flex-direction: column;
+    }
+    .pres-bus h2{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+/* Media query for medium screens */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    th,
+    td {
+        padding: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 901px) {
+
+    th,
+    td {
+        padding: 25px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 417px) {
+    main .tabla {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 401px) {
+    header img {
+        width: 200px;
+    }
+
+    footer img {
+        width: 200px;
+    }
+
+    footer .social ul li i {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 373px) {
+    main .hero {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    header .nav .ul .li a {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    main .informacion {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    main .hero {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        padding: 2rem;
+    }
+    body {
+        font-size: 0.8rem;
+    }
+}

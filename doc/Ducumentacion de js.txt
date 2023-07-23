@@ -1,0 +1,56 @@
+﻿Documentación del código JS:
+
+
+1. Selecciona los elementos del DOM:
+   - `button`: representa un botón.
+   - `nav`: representa una barra de navegación.
+   - `whatsappIcon`: representa un ícono de WhatsApp.
+   - `fila`: representa un contenedor de carrusel.
+   - `peliculas`: representa una colección de elementos que representan películas.
+   - `flechaIzquierda` y `flechaDerecha`: representan botones de navegación para desplazar el carrusel.
+
+
+2. Agrega un evento de escucha al botón `button` para alternar la clase `'activo'` en el elemento `nav` cuando se hace clic en él. Esto permite mostrar u ocultar la barra de navegación al hacer 
+clic en el botón.
+
+
+3. Agrega un evento de escucha al desplazamiento de la ventana (`window.scroll`) para mostrar u ocultar el ícono de WhatsApp (`whatsappIcon`) en función de la posición del desplazamiento.
+ Si la posición del desplazamiento es mayor a 200 píxeles, se agrega la clase `'show'` al elemento `whatsappIcon` para mostrarlo; de lo contrario, se elimina la clase para ocultarlo.
+
+
+4. Agrega eventos de escucha a los botones de navegación (`flechaIzquierda` y `flechaDerecha`) del carrusel. Al hacer clic en estas flechas, el carrusel se desplaza hacia la izquierda o hacia
+ la derecha modificando la propiedad `scrollLeft` del elemento `fila`. Además, se llama a la función `toggleIndicadores` para alternar los indicadores activos en función de la dirección del
+ desplazamiento.
+
+
+5. Crea un número de indicadores de página correspondiente al número de páginas necesarias para mostrar todas las películas en el carrusel. Crea un elemento de botón dinámicamente para cada 
+página y lo agrega como un indicador. El indicador inicial se marca como activo agregando la clase `'activo'`.
+
+
+6. Agrega un evento de escucha a cada indicador de página. Cuando se hace clic en un indicador, el carrusel se desplaza a la página correspondiente modificando la propiedad `scrollLeft` del 
+elemento `fila`. Además, se llama a la función `toggleActiveIndicator` para alternar el indicador activo.
+
+
+7. Agrega un evento de escucha al evento `mouseleave` del elemento `fila`. Cuando el cursor sale del área del carrusel, se elimina la clase `'hover'` de todas las películas en el carrusel.
+
+
+8. La función `toggleIndicadores` se utiliza para cambiar el indicador activo en el carrusel. Recibe la dirección del desplazamiento y verifica si existe un indicador siguiente o anterior al
+ indicador activo actual. Si es así, llama a la función `toggleActiveIndicator` para alternar el indicador activo.
+
+
+9. La función `toggleActiveIndicator` se utiliza para alternar el indicador activo en el carrusel. Recibe el indicador seleccionado y realiza los cambios necesarios para activar ese indicador
+ y desactivar el indicador activo actual.
+
+
+10. La función `search` se utiliza para buscar y filtrar filas en una tabla. Obtiene el valor del campo de entrada con el ID `'searchInput'`, lo convierte a minúsculas y lo utiliza para filtrar 
+las filas de la tabla. Las filas que contienen el texto de búsqueda se muestran cambiando su propiedad `display` a `''`, mientras que las demás se ocultan cambiando la propiedad a `'none'`.
+
+
+En resumen, el código actualizado realiza las siguientes funcionalidades:
+
+
+- Alternar la visibilidad de una barra de navegación al hacer clic en un botón.
+- Mostrar un ícono de WhatsApp cuando se desplaza hacia abajo en la página.
+- Permitir la navegación del carrusel mediante botones de flecha.
+- Crear y alternar indicadores de página para el carrusel.
+- Filtrar y mostrar filas en una tabla según un término de búsqueda.
