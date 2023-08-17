@@ -5,8 +5,13 @@ button.addEventListener('click', () => {
 });
 
 const whatsappIcon = document.querySelector('.whatsapp-icon');
+const footer = document.querySelector('footer');
+
 window.addEventListener('scroll', () => {
-	whatsappIcon.classList.toggle('show', window.scrollY > 200);
+    const scrollY = window.scrollY;
+    const footerPosition = footer.getBoundingClientRect().top;
+
+    whatsappIcon.classList.toggle('show', scrollY > 200 && scrollY < footerPosition);
 });
 
 const fila = document.querySelector('.contenedor-carousel');

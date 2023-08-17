@@ -42,38 +42,48 @@
         </a>
     </div>
     <main>
+        <section class="informacion dos">
+            <h2>IMPORTANTE</h2>
+            <div class="dos-p">
+                <p>*A continuación, usted podrá descargar nuestra lista de precios auto cotizable y simular su presupuesto. <br>
+                *Recuerde que los precios que figuran en nuestra lista están actualizados y son válidos hasta el 31 Agosto 2023. <br>
+                *Pedimos $ 5000 de garantía, se devuelven al retirar la vajilla (de haber artículos faltantes o rotos, se descontará de esa garantía). <br>
+                *Requisito para alquilar la vajilla: Original y fotocopia de D.N.I. <br>
+                *La vajilla se devuelve SIN LAVAR.</p>
+            </div>
+        </section>
         <section class="tabla">
             <div class="pres-bus">
                 <h2>Presupuesto</h2>
                 <div class="search-container">
                     <input type="text" id="searchInput" class="search-input" placeholder="Buscar por descripción">
                     <button onclick="search()" class="search-button">Buscar</button>
+                    <button class="search-button" id="descargarTabla">Descargar</button>
                 </div>
             </div>
             <div id="tablaProductos"></div>
         </section>
-        <section class="informacion dos">
-            <h2>IMPORTANTE</h2>
-            <p>El alquiler se confirma con el 50 % de la seña, mediante una transferencia de Cuenta Propia</p>
-        </section>
     </main>
     <footer data-aos="fade-up">
         <section class="footer">
-            <img src="../Img/logo-footer.png" alt="logo">
+            <img src="../Img/logo.png" alt="logo">
             <div class="social">
                 <ul>
                     <li><a href="https://www.instagram.com/lavajilladesufiesta/" target="_blank"><i
                         class="bi bi-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/lavajilladesufiesta/?fref=ts" target="_blank"><i
                         class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://wa.link/png6se" target="_blank"><i class="bi bi-whatsapp"></i></a></li>
                 </ul>
             </div>
         </section>
         <section class="copy">
-            <p>2023.Desing By <a href="https://nahuelguerra.com.ar/" target="_blank">NahuelGuerra</a></p>
+            <p>La Vajilla de Su Fiesta / Alquiler de Vajilla, Manteleria, Mesas, Sillas, Living y Gazebos, © 2000, Desing By <a href="https://nahuelguerra.com.ar/" target="_blank">NahuelGuerra</a></p>
             
         </section>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="../js/main.js"></script>

@@ -1,12 +1,11 @@
 const tablaProductos = document.getElementById("tablaProductos");
+const botonDescargar = document.getElementById("descargarTabla");
 function generarTablaProductos(products) {
   let tablaHTML = `
     <table>
       <tr>
         <th>Descripción</th>
         <th>Precio</th>
-        <th>Sub-Total</th>
-        <th>Reposición</th>
       </tr>
   `;
 
@@ -15,8 +14,6 @@ function generarTablaProductos(products) {
       <tr>
         <td>${product["Descripción"]}</td>
         <td>${product["Precio"]}</td>
-        <td>${product["Sub-Total"]}</td>
-        <td>${product["Reposición"]}</td>
       </tr>
     `;
   });
@@ -24,7 +21,6 @@ function generarTablaProductos(products) {
   tablaHTML += `</table>`;
   return tablaHTML;
 }
-
 const products = [
     {
       "Descripción": "Plato Principal Blanco Verbano de 26 cm",
@@ -298,3 +294,19 @@ aumentarPrecioPorcentaje(products, porcentajeAumento);
 const tablaHTML = generarTablaProductos(products);
 
 tablaProductos.innerHTML = tablaHTML;
+
+function descargarPDF() {
+  const doc = new jsPDF();
+  
+  doc.text("Nuestros Servicios:", 20, 20);
+  
+  const tabla = generarTablaProductos(products);
+  
+  doc.fromHTML(tabla, 20, 20);
+  
+  doc.save("tabla_productos.pdf");
+}
+
+botonDescargar.addEventListener("click", () => {
+  descargarPDF();
+});
